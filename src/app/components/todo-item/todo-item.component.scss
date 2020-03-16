@@ -9,3 +9,20 @@ p {
     display: inline-block;
     margin: 0 30px;
 }
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.del {
+    background: red;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.is-complete {
+    text-decoration: line-through;
+}

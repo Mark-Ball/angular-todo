@@ -14,6 +14,10 @@ export class TodoItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  setClasses() {
+    return { 'is-complete': this.todo.completed };
+  }
+
   clickCheckbox() {
     console.log('clicked');
   }

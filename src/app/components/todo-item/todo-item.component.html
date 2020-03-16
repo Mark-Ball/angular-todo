@@ -1,5 +1,5 @@
-<div>
+<div class='flex'>
     <input type='checkbox' (click)='clickCheckbox()' />
-    <p>{{ todo.id }}</p>
-    <p>{{ todo.title }}</p>
+    <p [ngClass]='setClasses()'>{{ todo.title }}</p>
+    <button class='del'>x</button>
 </div>
