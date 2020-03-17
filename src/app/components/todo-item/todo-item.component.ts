@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from '../../models/Todo';
 
 @Component({
@@ -8,18 +8,25 @@ import { Todo } from '../../models/Todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo: Todo;
+  @Output() emitChecked = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  // key is the class to add, value is the conditional (true or false)
   setClasses() {
     return { 'is-complete': this.todo.completed };
   }
 
-  clickCheckbox() {
-    console.log('clicked');
+  // this only toggles the UI, not the actual data
+  onToggle(item) {
+    console.log('toggled');
+    item.completed = !item.completed
   }
 
+  onDelete(item) {
+    console.log('deleted');
+  }
 }
