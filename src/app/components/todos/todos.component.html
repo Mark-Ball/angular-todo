@@ -3,5 +3,6 @@
 <div *ngFor='let item of todos'>
     <app-todo-item
         [todo]="item"
+        (deleteTodo)='deleteTodo($event)'
     ></app-todo-item>
 </div>
